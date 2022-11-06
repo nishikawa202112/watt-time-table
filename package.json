@@ -1,0 +1,32 @@
+{
+  "name": "watt-time-table",
+  "version": "1.0.0",
+  "description": "watt-time-table create a microwave oven heating time conversion table.",
+  "main": "index.js",
+  "bin": {
+    "watt-time-table": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishikawa202112/watt-time-table.git"
+  },
+  "keywords": [
+    "microwave",
+    "watt"
+  ],
+  "author": "nishikawa202112",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nishikawa202112/watt-time-table/issues"
+  },
+  "homepage": "https://github.com/nishikawa202112/watt-time-table#readme",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0"
+  }
+}
