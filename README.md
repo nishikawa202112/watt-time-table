@@ -6,12 +6,12 @@ This translates time from 500w to 800w.
 ## Install
 Install with npm.
 ```
-$ npm install watt-time-table
+$ npm install -g watt-time-table
 ```
 ## How to use
 Run the following command.
 ```
-$ npx watt-time-table
+$ watt-time-table
 ```
 
-![watt-time-table](https://user-images.githubusercontent.com/95329429/200155864-5911d22a-d3fb-40f6-aad8-30127e733067.gif)
+![watt-time-table](https://user-images.githubusercontent.com/95329429/200161028-5438da83-96bb-4ae2-b041-b955fe75bf89.gif)
