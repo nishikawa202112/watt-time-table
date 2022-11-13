@@ -1,6 +1,6 @@
 {
   "name": "watt-time-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "watt-time-table create a microwave oven heating time conversion table.",
   "main": "index.js",
   "bin": {
