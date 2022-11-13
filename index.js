@@ -47,13 +47,13 @@ async function getMinutes(watt) {
       name: "value",
       message: `Please enter the minutes. ( 0 <= minutes <= ${maxNum}(max) ) `,
       validate(value) {
-        if (0 <= value && value <= maxNum) {
-          if (Number.isInteger(Number(value))) {
+        if (Number.isInteger(Number(value))) {
+          if (0 <= value && value <= maxNum) {
             return true;
           }
-          return "please enter an integer";
+          return `Please enter between 0 and ${maxNum}`;
         }
-        return `Please enter between 0 and ${maxNum}`;
+        return "please enter an integer";
       },
     };
     prompt(promptMinutes)
@@ -71,13 +71,13 @@ async function getSeconds() {
       name: "value",
       message: "Please enter the seconds. ( 0 <= seconds < 60 )",
       validate(value) {
-        if (0 <= value && value < 60) {
-          if (Number.isInteger(Number(value))) {
+        if (Number.isInteger(Number(value))) {
+          if (0 <= value && value < 60) {
             return true;
           }
-          return "please enter an integer";
+          return "Please enter between 0 and less than 60";
         }
-        return "Please enter between 0 and less than 60";
+        return "please enter an integer";
       },
     };
     prompt(promptSeconds)
@@ -92,14 +92,14 @@ function showConversionTable(wattSeconds) {
   console.log(
     "\n\u001b[32m Microwave heating time conversion table \u001b[36m"
   );
-  for (let i = 500; i <= 800; i = i + 100) {
+  Object.keys(maxMinutesObj).forEach(function (watt) {
     console.log(
-      ` *    ${i}w    ${Math.floor(wattSeconds / i / 60)
+      ` *    ${watt}w    ${Math.floor(wattSeconds / watt / 60)
         .toString()
-        .padStart(2)}min. ${Math.round((wattSeconds / i) % 60)
+        .padStart(2)}min. ${Math.round((wattSeconds / watt) % 60)
         .toString()
         .padStart(2)}sec.    *`
     );
-  }
+  });
 }
 main();
