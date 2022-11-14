@@ -47,13 +47,10 @@ async function getMinutes(watt) {
       name: "value",
       message: `Please enter the minutes. ( 0 <= minutes <= ${maxNum}(max) ) `,
       validate(value) {
-        if (Number.isInteger(Number(value))) {
-          if (0 <= value && value <= maxNum) {
-            return true;
-          }
+        if (!Number.isInteger(Number(value))) return "please enter an integer";
+        if (0 > value || value > maxNum)
           return `Please enter between 0 and ${maxNum}`;
-        }
-        return "please enter an integer";
+        return true;
       },
     };
     prompt(promptMinutes)
@@ -71,13 +68,10 @@ async function getSeconds() {
       name: "value",
       message: "Please enter the seconds. ( 0 <= seconds < 60 )",
       validate(value) {
-        if (Number.isInteger(Number(value))) {
-          if (0 <= value && value < 60) {
-            return true;
-          }
+        if (!Number.isInteger(Number(value))) return "please enter an integer";
+        if (0 > value || value >= 60)
           return "Please enter between 0 and less than 60";
-        }
-        return "please enter an integer";
+        return true;
       },
     };
     prompt(promptSeconds)
